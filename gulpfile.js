@@ -90,7 +90,7 @@ gulp.task('watch', function() {
 });
 
 // Gulp Tasks
-gulp.task('default', ['watch', 'sass', 'serve'])
+gulp.task('default', gulp.series(['watch', 'sass', 'serve']));
 
 
 
@@ -151,4 +151,4 @@ gulp.task('minIMG', function() {
 });
 
 
-gulp.task('dist', ['minCSS', 'minJS', 'minIMG']);
+gulp.task('dist', gulp.series(['minCSS', 'minJS', 'minIMG']));
